@@ -15,6 +15,7 @@ class Home(TimeStampedModel):
         'Titulo Nosotros',
         max_length=50
     )
+    about_content = models.TextField()
     about_emil = models.EmailField(
         'Email de contacto',
         blank=True,

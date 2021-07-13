@@ -1,3 +1,5 @@
+
+from applications.entrada.managers import EntryManager
 from django.db import models
 from django.conf import settings
 
@@ -66,6 +68,8 @@ class Entry(TimeStampedModel):
     portada = models.BooleanField(default=False)
     in_home = models.BooleanField(default=False)
     slug = models.SlugField(editable=False, max_length=300)
+
+    objects = EntryManager()
 
     class Meta:
         verbose_name = 'Entrada'
