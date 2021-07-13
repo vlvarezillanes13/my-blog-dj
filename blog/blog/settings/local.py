@@ -33,3 +33,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # EMAIL_HOST_USER = get_secret('EMAIL')
 # EMAIL_HOST_PASSWORD = get_secret('PASS_EMAIL')
 # EMAIL_PORT = 587
+
+
+#CKEDITOR SETTINGS
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
