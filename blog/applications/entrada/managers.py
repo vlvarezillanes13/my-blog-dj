@@ -19,3 +19,16 @@ class EntryManager(models.Manager):
         return self.filter(
             public=True,
         ).order_by('-created')[:3]
+
+    def buscar_entrada(self, kword, categoria):
+        if len(categoria) > 0:
+            return self.filter(
+                category__short_name__icontains = categoria,
+                title__icontains = kword,
+                public = True
+            ).order_by('-created')
+        else:
+            return self.filter(
+                title__icontains = kword,
+                public = True
+            ).order_by('-created')
