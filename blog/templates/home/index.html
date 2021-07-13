@@ -53,7 +53,7 @@
             <!-- This is the first modal -->
             <div class="reveal" id="exampleModal2" data-reveal style="width: 300px;">
                 <p class="lead">Ingresa tu correo</p>
-                <form class="grid-x grid-margin-x" method="POST" action="{% url home_app:add-suscription %}">
+                <form class="grid-x grid-margin-x" method="POST" action="{% url 'home_app:add-suscription' %}">
                     {% csrf_token %}
                     <div class="cell small-12">
                         {{ form.email }}
