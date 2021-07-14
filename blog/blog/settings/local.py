@@ -39,10 +39,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-'''
 CKEDITOR_CONFIGS = {
-    "default": {
-        "removePlugins": "stylesheetparser",
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline',],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['TextColor', 'Format', 'FontSize', 'Link'],
+            ['Smiley', 'Image', 'Iframe'],
+            ['RemoveFormat', 'Source'],
+        ],
+        'stylesSet': [
+        ],
     }
 }
-'''
