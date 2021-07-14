@@ -4,7 +4,8 @@ from .models import Category, Entry
 # Create your views here.
 
 from django.views.generic import(
-    ListView
+    ListView,
+    DetailView,
 )
 
 
@@ -26,3 +27,9 @@ class EntryListView(ListView):
         #
         resultado = Entry.objects.buscar_entrada(kword, categoria)
         return resultado
+
+
+class EntryDetailView(DetailView):
+    model = Entry
+    template_name = "entrada/detail.html"
+
