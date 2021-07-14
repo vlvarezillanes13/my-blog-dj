@@ -4,6 +4,7 @@ from django.db import models
 from django.conf import settings
 #
 from django.template.defaultfilters import slugify
+from django.urls.base import reverse_lazy
 #
 from applications.entrada.managers import EntryManager
 #
@@ -81,7 +82,13 @@ class Entry(TimeStampedModel):
 
     def __str__(self):
         return self.title
-
+    def get_absolute_url(self):
+        return reverse_lazy(
+            'entrada_app:entry-detail',
+            kwargs={
+                'slug': self.slug
+            }
+        )
     def save(self, *args, **kwargs):
         now = datetime.now()
         total_time = timedelta(
