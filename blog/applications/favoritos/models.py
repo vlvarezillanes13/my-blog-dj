@@ -1,3 +1,4 @@
+from applications.favoritos.managers import FavoritesManager
 from applications.entrada.models import Entry
 from django.conf import settings
 from django.db import models
@@ -17,6 +18,8 @@ class Favorito(TimeStampedModel):
         related_name='entry_favorites',
         on_delete=models.CASCADE
     )
+
+    objects = FavoritesManager()
 
     class Meta:
         unique_together = ('user','entry')

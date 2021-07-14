@@ -5,5 +5,19 @@ from . import views
 app_name = "favoritos_app"
 
 urlpatterns = [
-
+    path(
+        'perfil/',
+        views.UserPageView.as_view(),
+        name='perfil'
+    ),
+    path(
+        'add-entrada/<pk>/',
+        views.AddFavoritosView.as_view(),
+        name='add-favoritos'
+    ),
+    path(
+        'delete-favorite/<pk>/',
+        views.FavoriteDeleteView.as_view(),
+        name='delete-favoritos'
+    )
 ]
